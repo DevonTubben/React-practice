@@ -8,8 +8,8 @@ class App extends Component{
    // debugger  Always put debugger between your render and return
   return ( // Only thing that should be in your return is a JSX element
     <div className="App">
-       <h1>Hello {name.toUpperCase()}</h1>
-       <List name={name}/>
+       <h1>Good Morning {name.toUpperCase()}</h1>
+       <List todos={["Walk Dog", "Workout", "Code", "Sauna", "Run"]}/>
     </div>
   );
 }
