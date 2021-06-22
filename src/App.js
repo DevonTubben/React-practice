@@ -9,7 +9,7 @@ class App extends Component{
   return ( // Only thing that should be in your return is a JSX element
     <div className="App">
        <h1>Hello {name.toUpperCase()}</h1>
-       <List/>
+       <List name={name}/>
     </div>
   );
 }

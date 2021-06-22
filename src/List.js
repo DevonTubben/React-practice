@@ -3,9 +3,13 @@ import React, { Component } from 'react'
 class List extends Component { 
     render(){ 
         return ( 
-            <div> 
-                List
-            </div>
+        <ul> 
+            <li> Walk Dog</li>
+            <li> Work Out</li>
+            <li> Code</li>
+            <li> Sauna</li>
+            <li> Run</li>
+        </ul>
         )
     }
 }
