@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
+import List from './List'
+
 class App extends Component{
   render(){ 
-    debugger // Always put debugger between your render and return
+    const name = "papi"
+
+   // debugger  Always put debugger between your render and return
   return ( // Only thing that should be in your return is a JSX element
-    <>
     <div className="App">
-       <h1>Hello World!</h1>
+       <h1>Hello {name.toUpperCase()}</h1>
+       <List/>
     </div>
-    <div> 
-      <h1>Call Me Papi</h1>
-      </div>
-      </>
   );
 }
 } 
