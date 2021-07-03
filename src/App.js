@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import List from './List'
-import Form from './Form'
+//import Form from './Form'
 
 class App extends Component{
   render(){ 
@@ -10,7 +10,6 @@ class App extends Component{
   return ( // Only thing that should be in your return is a JSX element
     <div className="App">
        <h1>Good Morning {name.toUpperCase()}</h1>
-       <Form />
        <List todos={["Walk Dog", "Workout", "Code", "Sauna", "Run"]}/>
     </div>
   );

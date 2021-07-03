@@ -1,5 +1,6 @@
 import React, { Component } from 'react' 
 import Item from './Item' 
+import Form from './Form'
 
 class List extends Component { 
     
@@ -10,7 +11,7 @@ class List extends Component {
         super()
         this.state = { 
             todos: ["Eat", "Sleep", "Chores", "Watch sports"],
-            list: ["Run"]
+       //     list: ["Run"]
         }
     }
 
@@ -18,13 +19,17 @@ class List extends Component {
         return this.state.todos.map(item => <Item item={item} delete={this.deleteItem}/>)
     }
 
-    handleClick = () => { 
+    // handleClick = () => { 
     //    console.log("e", e)
     //    console.log("string", string)
-        this.setState({ 
-            todos: [...this.state.todos, "Take Dog Out"]
-        })
-    }
+    //     this.setState({ 
+    //        todos: [...this.state.todos, "Take Dog Out"]
+    //     })
+    //     this.setState((prevState) => ({todos: [...prevState.todos, "Sleep"]}))
+    //     this.setState((prevState) => ({todos: [...prevState.todos, "Lay Out"]}))
+    // }
+// this.setState
+
 
     deleteItem = (item) => { 
         console.log('item', item)
@@ -32,10 +37,12 @@ class List extends Component {
 
     render(){ 
         return ( 
+            <> 
+                <Form />
             <ul> 
-                <button onClick={this.handleClick}>Add</button>
                 {this.renderItems()}
             </ul>
+            </>
         )
     }
 }
