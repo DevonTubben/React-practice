@@ -4,7 +4,7 @@ import Item from './Item'
 class List extends Component { 
  
     renderItems() { 
-        return this.props.todos.map(item => <li>{item}</li>)
+        return this.props.todos.map(item => <Item item={item} string="Hello" list={["Eat", "Stretch", "Chores"]}/>)
     }
     render(){ 
         return ( 
