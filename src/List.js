@@ -30,15 +30,19 @@ class List extends Component {
     // }
 // this.setState
 
+    addItem = (formData) => { 
+        this.setState((prevState) => ({todos: [...prevState.todos, formData.item]}))
+    }
 
     deleteItem = (item) => { 
         console.log('item', item)
     }
 
+    
     render(){ 
         return ( 
             <> 
-                <Form />
+                <Form handleSubmit={this.addItem}/>
             <ul> 
                 {this.renderItems()}
             </ul>
