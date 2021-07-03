@@ -1,5 +1,5 @@
 import React, { Component } from 'react' 
-import Item from './Item'
+import Item from './Item' 
 
 class List extends Component { 
     
@@ -9,12 +9,13 @@ class List extends Component {
         // By calling super we are executing the constructor defined in component which is absolutely necessary because that constructor defines important attributes on our instance - most notably, props
         super()
         this.state = { 
-            todos: ["Eat", "Sleep", "Chores", "Watch sports"]
+            todos: ["Eat", "Sleep", "Chores", "Watch sports"],
+            list: ["Run"]
         }
     }
 
     renderItems() { 
-        return this.state.todos.map(item => <Item item={item} string="Hello" list={["Eat", "Stretch", "Chores"]}/>)
+        return this.state.todos.map(item => <Item item={item} delete={this.deleteItem}/>)
     }
 
     handleClick = () => { 
@@ -25,6 +26,9 @@ class List extends Component {
         })
     }
 
+    deleteItem = (item) => { 
+        console.log('item', item)
+    }
 
     render(){ 
         return ( 
