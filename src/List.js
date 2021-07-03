@@ -3,24 +3,33 @@ import Item from './Item'
 
 class List extends Component { 
     
-    // static defaultProps={ 
-    //     todos: ["Run"]
-    // }
- 
-    renderItems() { 
-        return this.props.todos.map(item => <Item item={item} string="Hello" list={["Eat", "Stretch", "Chores"]}/>)
+    constructor(){ 
+        // Inside our constructor we must call the super method before setting our initial state
+        // The super method refers to the contructor method in the parent class (component)
+        // By calling super we are executing the constructor defined in component which is absolutely necessary because that constructor defines important attributes on our instance - most notably, props
+        super()
+        this.state = { 
+            todos: ["Eat", "Sleep", "Chores", "Watch sports"]
+        }
     }
 
-    handleClick = (e, string) => { 
-        console.log("e", e)
-        console.log("string", string)
+    renderItems() { 
+        return this.state.todos.map(item => <Item item={item} string="Hello" list={["Eat", "Stretch", "Chores"]}/>)
+    }
+
+    handleClick = () => { 
+    //    console.log("e", e)
+    //    console.log("string", string)
+        this.setState({ 
+            todos: [...this.state.todos, "Take Dog Out"]
+        })
     }
 
 
     render(){ 
         return ( 
             <ul> 
-                <button onClick={(e) => this.handleClick(e, "You know what time it is")}>Add</button>
+                <button onClick={this.handleClick}>Add</button>
                 {this.renderItems()}
             </ul>
         )
