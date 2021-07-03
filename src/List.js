@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import Item from './Item'
 
 class List extends Component { 
+    
+    // static defaultProps={ 
+    //     todos: ["Run"]
+    // }
  
     renderItems() { 
         return this.props.todos.map(item => <Item item={item} string="Hello" list={["Eat", "Stretch", "Chores"]}/>)
@@ -17,6 +21,9 @@ class List extends Component {
 
 export default List 
 
+ List.defaultProps={ 
+        todos: ["Eat"]
+    }
 
 /* <ul> 
  <li> Walk Dog</li>
