@@ -10,9 +10,16 @@ class List extends Component {
     renderItems() { 
         return this.props.todos.map(item => <Item item={item} string="Hello" list={["Eat", "Stretch", "Chores"]}/>)
     }
+
+    handleClick = (string) => { 
+        console.log("string")
+    }
+
+
     render(){ 
         return ( 
             <ul> 
+                <button onClick={() => this.handleClick("hello")}>Add</button>
                 {this.renderItems()}
             </ul>
         )
@@ -21,9 +28,9 @@ class List extends Component {
 
 export default List 
 
- List.defaultProps={ 
-        todos: ["Eat"]
-    }
+//  List.defaultProps={ 
+//         todos: ["Eat"]
+//     }
 
 /* <ul> 
  <li> Walk Dog</li>
