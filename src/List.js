@@ -11,15 +11,16 @@ class List extends Component {
         return this.props.todos.map(item => <Item item={item} string="Hello" list={["Eat", "Stretch", "Chores"]}/>)
     }
 
-    handleClick = (string) => { 
-        console.log("string")
+    handleClick = (e, string) => { 
+        console.log("e", e)
+        console.log("string", string)
     }
 
 
     render(){ 
         return ( 
             <ul> 
-                <button onClick={() => this.handleClick("hello")}>Add</button>
+                <button onClick={(e) => this.handleClick(e, "You know what time it is")}>Add</button>
                 {this.renderItems()}
             </ul>
         )
