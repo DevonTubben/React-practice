@@ -13,6 +13,13 @@ class List extends Component {
             todos: ["Eat", "Sleep", "Chores", "Watch sports"],
        //     list: ["Run"]
         }
+        console.log("constructor")
+    }
+
+    componentDidMount(){ 
+        console.log("component did mount")
+        //component did mount is called last after the constructor and render
+        //render is the only one that can get called multiple times
     }
 
     renderItems() { 
@@ -40,6 +47,8 @@ class List extends Component {
 
     
     render(){ 
+        // render should always be at the bottom because it is whats being returned
+        console.log("render")
         return ( 
             <> 
                 <Form handleSubmit={this.addItem}/>
