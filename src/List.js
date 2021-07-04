@@ -23,7 +23,17 @@ class List extends Component {
     }
 
     renderItems() { 
-        return this.state.todos.map(item => <Item item={item} delete={this.deleteItem}/>)
+        return this.state.todos.map(item => <Item key={item} item={item} delete={this.deleteItem}/>)
+        //when you have multiple components being rendered react uses that key as a diffing algorithm and if you dont add the key you wont have an error
+    }
+
+    componentDidUpdate(){ 
+        console.log("old word", this.state.word)
+        console.log("component mounted")
+        if(this.state.word === "Hello"){ 
+          this.setState({ word: "Bye"})
+        }
+        console.log("new word", this.state.word)
     }
 
     // handleClick = () => { 
@@ -43,6 +53,8 @@ class List extends Component {
 
     deleteItem = (item) => { 
         console.log('item', item)
+        const newTodos = this.props.todos.filter(todo => todo !== item)
+        this.setState({todos: newTodos})
     }
 
     

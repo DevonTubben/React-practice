@@ -1,11 +1,12 @@
 import React, {Component} from 'react' 
 
-class Button extends Component{ 
-    render(){ 
+function Button(props){
         return( 
-            <button onClick={() => this.props.delete(this.props.item)}>X</button>
+            <button onClick={() => props.delete(props.item)}>X</button>
         )
-    }
+  
 }
 
-export default Button
+export default Button 
+
+// functional component

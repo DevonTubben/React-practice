@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import List from './List'
 //import Form from './Form'
 
-class App extends Component{
-  render(){ 
+const App = () => { 
+
     const name = "papi"
 
    // debugger  Always put debugger between your render and return
@@ -14,5 +14,7 @@ class App extends Component{
     </div>
   );
 }
-} 
+
 export default App;
+
+// Function component

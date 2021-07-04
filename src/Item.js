@@ -1,16 +1,26 @@
 import React, { Component } from 'react' 
 import Button from './Button'
 
-class Item extends Component { 
+const Item = (props) => { 
+
+
+   
+// componentDidMount(){ 
+// this.timerId = setInterval(() => console.log(this.props.item, "interval"), 2000)
+// }
  
-    render(){ 
+// componentWillUnmount(){ 
+// clearInterval(this.timerId)
+// }
+
         return (
     <li>
-        {this.props.item}
-        <Button item={this.props.item}/>
+        {props.item}
+        <Button delete={props.delete} item={props.item}/>
     </li>
     ) 
 } 
-} 
 
-export default Item
+export default Item 
+
+// functional component. presentational.
